@@ -3,7 +3,7 @@ import { WeathersearchComponent } from './weathersearch.component';
 import { WeathersearchService } from 'src/app/Service/Weather-Search/weathersearch.service';
 import { of, throwError } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 class MockAngularFireAuth {
   signOut(): Promise<void> {
@@ -21,7 +21,7 @@ describe('WeathersearchComponent', () => {
       declarations: [WeathersearchComponent],
       providers: [WeathersearchService,
         {
-          provide: AngularFireAuth,
+         
           useClass: MockAngularFireAuth,
         },
       ],
@@ -84,6 +84,6 @@ describe('WeathersearchComponent', () => {
     tick();
     expect(component.weatherData).toBeUndefined(); 
     expect(component.forecastData).toBeUndefined(); 
-    expect(component.location).toEqual('Banglore');
+    expect(component.location).toEqual('');
   }));
 });

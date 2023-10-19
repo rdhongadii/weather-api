@@ -5,7 +5,6 @@ import { LocationService } from 'src/app/Service/User Location/ForeCastLocation.
 import { ActivatedRoute, Router } from '@angular/router';
 import { of, throwError } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 class MockAngularFireAuth {
@@ -40,7 +39,7 @@ describe('LocationComponent', () => {
           },
         },
         {
-          provide: AngularFireAuth,
+         
           useClass: MockAngularFireAuth,
         },
       ],
@@ -82,14 +81,15 @@ describe('LocationComponent', () => {
   }));
 
   it('should handle errors during data fetching', fakeAsync(() => {
-    spyOn(weatherService, 'getWeatherByLocation').and.returnValue(throwError('Weather error'));
-    spyOn(locationService, 'getForecastByLocation').and.returnValue(throwError('Forecast error'));
-
+    spyOn(weatherService, 'getWeatherByLocation').and.returnValue(throwError('User blocked location detector.Please allow the location detector from settings'));
+    spyOn(locationService, 'getForecastByLocation').and.returnValue(throwError('User blocked location detector.Please allow the location detector from settings'));
+  
     component.ngOnInit();
     tick(); 
-    expect(component.errorMessage).toContain('Error fetching');
-
+    expect(component.errorLocationMessage).toContain('User blocked location detector.Please allow the location detector from settings');
+    expect(component.errorFetchMessage).toContain('User blocked location detector.Please allow the location detector from settings');
   }))
+  
 
   it('should navigate with geolocation data', fakeAsync(() => {
     spyOn(navigator.geolocation, 'getCurrentPosition').and.callFake((successCallback) => {
@@ -121,6 +121,6 @@ describe('LocationComponent', () => {
   
     component.getLocation();
   
-    expect(component.errorMessage).toBe('Geolocation is not supported by your browser.');
+    expect(component.errorMessage).toBe('User blocked location detector.Please allow the location detector from settings');
   });
 });

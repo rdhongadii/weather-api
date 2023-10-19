@@ -2,7 +2,7 @@
 .button{
   position: absolute;
   top: 10px;
-  left:300px;
+  left:600px;
   border-radius: 12px;
   font-size: 16px;
   background-color: pink;
@@ -39,4 +39,17 @@
 .error-message {
   color: pink;
   font-weight: bold;
+}
+.Search-Container{
+  position: absolute;
+  top: 10px;
+  left:350px;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: purple;
+  border: pink;
+  color: aqua;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+
 }
