@@ -1,0 +1,31 @@
+<header class="head-container">
+  <div class="centered">
+  <div class="site-branding">
+    <h1 class="site-title">Weather Data</h1>
+    <button class="button" (click)="getLocation()">Location</button>
+  </div>
+  </div>
+  </header>
+  <main class="main-area">
+
+  <div *ngIf="weatherData" class="Currentdata-item">
+  <h3>City: {{ weatherData.name }}</h3>
+  <p>Temperature: {{ weatherData.main.temp }}°C</p>
+  <p>Weather Description: {{ weatherData.weather[0].description }}</p>
+</div>
+<div *ngIf="errorMessage">
+  <p class="error-message">{{ errorMessage }}</p>
+</div>
+<div *ngIf="forecastData">
+  
+  <div *ngFor="let item of forecastData.list" class="forecast-item">
+    <p><strong>Date/Time:</strong> {{ item.dt_txt }}</p>
+    <p><strong>Temperature:</strong> {{ item.main.temp }}°C</p>
+    <p><strong>Condition:</strong> {{ item.weather[0].description }}</p>
+  </div>
+</div>
+
+<div *ngIf="errorMessage">
+  <p>{{ errorMessage }}</p>
+</div>
+</main>

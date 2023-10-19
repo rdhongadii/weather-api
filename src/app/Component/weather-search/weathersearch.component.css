@@ -1,0 +1,42 @@
+
+.button{
+  position: absolute;
+  top: 10px;
+  left:300px;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: pink;
+  border: pink;
+  color: aqua;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: plum;
+  color: white;
+}
+
+.forecast-item {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 60px;
+  margin: 10px 0;
+  background-image: url('https://cdn.dribbble.com/users/2277649/screenshots/8498294/weather_dribbble_size.gif.gif'); /* Replace 'your-image-url.jpg' with the actual image URL */
+  background-size: 100% 100%;
+  color: purple;
+
+}
+.Currentdata-item {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 10px 0;
+  background-image: url('https://cdn.dribbble.com/users/2277649/screenshots/8498294/weather_dribbble_size.gif.gif'); /* Replace 'your-image-url.jpg' with the actual image URL */
+  background-size: 100% 100%;
+  color: purple;
+ 
+}
+.error-message {
+  color: pink;
+  font-weight: bold;
+}

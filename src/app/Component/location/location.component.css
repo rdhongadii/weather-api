@@ -1,0 +1,85 @@
+.centered {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+@media screen and (min-width: 52em) {
+  .centered {
+      max-width: 52em;
+  }
+}
+.head-container {
+background:rgb(133, 88, 133);
+box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.site-title {
+margin: 0 0 1em;
+padding: 1em 0;
+font-size: 2em;
+font-weight: 300;
+text-align: center;
+color: pink;
+}
+
+@media screen and (min-width: 44.44em) {
+.site-title {
+    font-size: 2em;
+}
+}
+
+@media screen and (min-width: 50em) {
+.site-title {
+    font-size: 2.5em;
+}
+}
+
+.site-title a {
+color: hsl(5, 45%, 95%);
+text-decoration: none;
+}
+
+.site-title a:hover {
+text-decoration: underline;
+}
+.main-area{
+  background-color: plum;
+  padding: 60px
+}
+.button{
+  position: absolute;
+  top: 55px;
+  left:1000px;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: pink;
+  border: pink;
+  color: aqua;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: plum;
+  color: white;
+}
+
+
+.forecast-item {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 60px;
+  margin: 10px 0;
+  background-image: url('https://cdn.dribbble.com/users/2277649/screenshots/8498294/weather_dribbble_size.gif.gif'); /* Replace 'your-image-url.jpg' with the actual image URL */
+  background-size: 100% 100%;
+  color: purple;
+}
+.Currentdata-item {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 60px;
+  margin: 10px 0;
+  background-image: url('https://cdn.dribbble.com/users/2277649/screenshots/8498294/weather_dribbble_size.gif.gif'); /* Replace 'your-image-url.jpg' with the actual image URL */
+  background-size: 100% 100%;
+  color: purple;
+}
+

@@ -1,0 +1,24 @@
+<div>
+    <input [(ngModel)]="query" placeholder="Enter a location" />
+    <button class="button" (click)="searchLocation()">Search</button>
+  </div>
+  <div *ngIf="errorMessage">
+    <p class="error-message">{{ errorMessage }}</p>
+  </div>
+  <div *ngIf="weatherData" class="Currentdata-item">
+    <h2>Weather in {{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
+    <p>Temperature: {{ weatherData.current.temp_c }}°C</p>
+    <p>Condition: {{ weatherData.current.condition.text }}</p>
+  </div>
+  <div *ngIf="forecastData">
+    <div *ngFor="let day of forecastData.forecast.forecastday" class="forecast-item">
+      <div class="forecast-day">
+        <p><strong>Date:</strong> {{ day.date }}</p>
+        <p><strong>Average Temperature:</strong> {{ day.day.avgtemp_c }}°C</p>
+        <p><strong>Condition:</strong> {{ day.day.condition.text }}</p>
+      </div>
+    </div>
+  </div>
+
+
+  
